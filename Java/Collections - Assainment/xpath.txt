@@ -1,0 +1,4 @@
+declare namespace soap ='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://tempuri.org/';
+ 
+//ns1:AddResult
