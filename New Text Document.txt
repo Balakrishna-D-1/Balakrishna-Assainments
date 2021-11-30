@@ -1,0 +1,25 @@
+<dependency>
+            <groupId>it.ozimov</groupId>
+            <artifactId>spring-boot-email-core</artifactId>
+            <version>0.6.3</version>
+        </dependency
+
+ @Autowired
+    public EmailService emailService;
+    @GetMapping("/send")
+    public String sendEmail() throws AddressException{
+       final Email email = DefaultEmail.builder()
+            .from(new InternetAddress("aaryan14032006@mail.com"))
+            .to(Lists.newArrayList(new InternetAddress("aryankumar14032006@gmail.com")))
+            .subject("Test Mail")
+            .body("meow meow")
+            .encoding("UTF-8").build();
+   
+            try {
+                emailService.send(email);
+                return "meow sent!";
+            } catch(Exception e) {
+                return e.getMessage();
+            }
+       
+    }
