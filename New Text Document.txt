@@ -1,16 +1,9 @@
-
-@Autowired
-    private JavaMailSender javaMailSender;
-    @GetMapping("/send")
-    String sendEmail() {
-        SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setTo("aaryan14032006@gmail.com");
-        msg.setSubject("Testing from Spring Boot");
-        msg.setText("Hello World \n Spring Boot Email");
-        try {
-            javaMailSender.send(msg);
-            return "meowwwwwww sent!";
-        } catch (Exception e) {
-            return e.getMessage();
-        }
-    }
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=aryankumar14032006@gmail.com
+spring.mail.password=pas
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000
+spring.mail.properties.mail.smtp.starttls.enable=true
